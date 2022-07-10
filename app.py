@@ -1,9 +1,9 @@
 import numpy as np
 from flask import Flask, request, render_template
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 import pickle
-import model.py
-import model.pkl
-import scaler.pkl
+
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ model1 = pickle.load(open("model.pkl", "rb"))
 scale = pickle.load(open("scaler.pkl", "rb"))
 
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET")
 def home():
     return render_template("index.html")
 
