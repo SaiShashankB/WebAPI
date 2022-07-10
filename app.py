@@ -1,7 +1,7 @@
 import numpy as np
 from flask import Flask, request, render_template
-from sklearn import StandardScaler
-from sklearn import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 import pickle
 
 
