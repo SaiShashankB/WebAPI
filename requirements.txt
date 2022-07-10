@@ -25,7 +25,7 @@ platformdirs==2.4.0
 plotly==5.6.0
 PyJWT==2.0.0
 pylint==2.12.2
-pyhton-dateutil==2.8.2
+python-dateutil==2.8.2
 pytz==2020.1
 scipy==1.7.3
 six==1.15.0
