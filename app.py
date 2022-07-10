@@ -1,10 +1,11 @@
 import numpy as np
 from flask import Flask, request, render_template
 import pickle
+import model
 
 app = Flask(__name__)
 
-model = pickle.load(open("model.pkl", "rb"))
+model1 = pickle.load(open("model.pkl", "rb"))
 scale = pickle.load(open("scaler.pkl", "rb"))
 
 
@@ -18,7 +19,7 @@ def predict():
     int_features = [int(x) for x in request.form.values()]
     features = [np.array(int_features)]
     transformed_features = scale.transform(features)
-    prediction = model.predict(transformed_features)
+    prediction = model1.predict(transformed_features)
 
     return render_template("index.html", prediction_text="The ad is {}".format(prediction))
 
