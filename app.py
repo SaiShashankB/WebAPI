@@ -11,7 +11,7 @@ model1 = pickle.load(open("model.pkl", "rb"))
 scale = pickle.load(open("scaler.pkl", "rb"))
 
 
-@app.route("/", methods=["POST", "GET")
+@app.route("/")
 def home():
     return render_template("index.html")
 
